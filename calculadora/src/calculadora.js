@@ -3,10 +3,26 @@ import "./calculadora.css";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 
 function Calculadora() {
-  const [txtNumeros, setTxtNumeros] = useState("");
+  const [
+    calcular,
+    concatenarNumero,
+    adicao,
+    diminuir,
+    dividir,
+    multiplicar,
+  ] = CalculadoraService();
+  const [txtNumeros, setTxtNumeros] = useState("0");
+  const [numero1, setNumero1] = useState("0");
+  const [numero2, setNumero2] = useState(null);
+  const [operacao, setOperacao] = useState(null);
 
   function adicionarNumero(numero) {
-    setTxtNumeros(txtNumeros + numero);
+    let resultado;
+    if (operacao === null) {
+      resultado = concatenarNumero(numero1, numero);
+      setNumero1(resultado);
+    } else {
+    }
   }
 
   function definirOperacao(op) {
